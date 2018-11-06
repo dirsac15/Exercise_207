@@ -28,21 +28,62 @@ public class WetterDlg extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        lbPlace = new javax.swing.JLabel();
+        tfPlace = new javax.swing.JTextField();
+        lbSealevel = new javax.swing.JLabel();
+        tfSealevel = new javax.swing.JTextField();
+        lbTemperature = new javax.swing.JLabel();
+        tfTemperature = new javax.swing.JTextField();
+        lbHumidity = new javax.swing.JLabel();
+        tfHumidity = new javax.swing.JTextField();
+        btOK = new javax.swing.JButton();
+        btCancel = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.GridLayout(5, 2));
+
+        lbPlace.setText("Place");
+        getContentPane().add(lbPlace);
+        getContentPane().add(tfPlace);
+
+        lbSealevel.setText("Sea level");
+        getContentPane().add(lbSealevel);
+        getContentPane().add(tfSealevel);
+
+        lbTemperature.setText("Temperature");
+        getContentPane().add(lbTemperature);
+        getContentPane().add(tfTemperature);
+
+        lbHumidity.setText("rel. Humidity");
+        getContentPane().add(lbHumidity);
+        getContentPane().add(tfHumidity);
+
+        btOK.setText("OK");
+        btOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onOk(evt);
+            }
+        });
+        getContentPane().add(btOK);
+
+        btCancel.setText("Cancel");
+        btCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onCancel(evt);
+            }
+        });
+        getContentPane().add(btCancel);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void onOk(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onOk
+        // TODO add your handling code here:
+    }//GEN-LAST:event_onOk
+
+    private void onCancel(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onCancel
+        // TODO add your handling code here:
+    }//GEN-LAST:event_onCancel
 
     /**
      * @param args the command line arguments
@@ -88,5 +129,15 @@ public class WetterDlg extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btCancel;
+    private javax.swing.JButton btOK;
+    private javax.swing.JLabel lbHumidity;
+    private javax.swing.JLabel lbPlace;
+    private javax.swing.JLabel lbSealevel;
+    private javax.swing.JLabel lbTemperature;
+    private javax.swing.JTextField tfHumidity;
+    private javax.swing.JTextField tfPlace;
+    private javax.swing.JTextField tfSealevel;
+    private javax.swing.JTextField tfTemperature;
     // End of variables declaration//GEN-END:variables
 }

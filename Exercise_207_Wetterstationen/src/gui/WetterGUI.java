@@ -28,7 +28,7 @@ public class WetterGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbWetter = new javax.swing.JTable();
         mbWetter = new javax.swing.JMenuBar();
         muStations = new javax.swing.JMenu();
         miAddWeatherStation = new javax.swing.JMenuItem();
@@ -39,7 +39,7 @@ public class WetterGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbWetter.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -50,16 +50,26 @@ public class WetterGUI extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbWetter);
 
         getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
         muStations.setText("Stations");
 
         miAddWeatherStation.setText("Add Weather Station");
+        miAddWeatherStation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onAddWeatherStations(evt);
+            }
+        });
         muStations.add(miAddWeatherStation);
 
         miRemoveWeatherStation.setText("Remove Weather Station");
+        miRemoveWeatherStation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onRemoveWeatherStation(evt);
+            }
+        });
         muStations.add(miRemoveWeatherStation);
 
         mbWetter.add(muStations);
@@ -67,9 +77,19 @@ public class WetterGUI extends javax.swing.JFrame {
         muValues.setText("Values");
 
         miSetTemperature.setText("Set Temperature");
+        miSetTemperature.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onSetTemperature(evt);
+            }
+        });
         muValues.add(miSetTemperature);
 
         miSetHumidity.setText("SetHumidity");
+        miSetHumidity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onSetHumidity(evt);
+            }
+        });
         muValues.add(miSetHumidity);
 
         mbWetter.add(muValues);
@@ -78,6 +98,50 @@ public class WetterGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void onAddWeatherStations(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onAddWeatherStations
+        try
+        {
+            
+        }
+        catch(Exception ex)
+        {
+            
+        }
+    }//GEN-LAST:event_onAddWeatherStations
+
+    private void onRemoveWeatherStation(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onRemoveWeatherStation
+        try
+        {
+            
+        }
+        catch(Exception ex)
+        {
+            
+        }
+    }//GEN-LAST:event_onRemoveWeatherStation
+
+    private void onSetTemperature(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onSetTemperature
+        try
+        {
+            
+        }
+        catch(Exception ex)
+        {
+            
+        }
+    }//GEN-LAST:event_onSetTemperature
+
+    private void onSetHumidity(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onSetHumidity
+        try
+        {
+            
+        }
+        catch(Exception ex)
+        {
+            
+        }
+    }//GEN-LAST:event_onSetHumidity
 
     /**
      * @param args the command line arguments
@@ -116,7 +180,6 @@ public class WetterGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JMenuBar mbWetter;
     private javax.swing.JMenuItem miAddWeatherStation;
     private javax.swing.JMenuItem miRemoveWeatherStation;
@@ -124,5 +187,6 @@ public class WetterGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem miSetTemperature;
     private javax.swing.JMenu muStations;
     private javax.swing.JMenu muValues;
+    private javax.swing.JTable tbWetter;
     // End of variables declaration//GEN-END:variables
 }
