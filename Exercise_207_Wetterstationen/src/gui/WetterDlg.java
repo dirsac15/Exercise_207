@@ -5,12 +5,17 @@
  */
 package gui;
 
+import beans.Wetter;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Sabrina
  */
 public class WetterDlg extends javax.swing.JDialog {
 
+    private boolean ok;
+    private Wetter wetter;
     /**
      * Creates new form WetterDg
      */
@@ -78,13 +83,45 @@ public class WetterDlg extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void onOk(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onOk
-        // TODO add your handling code here:
+        try
+        {
+            String place = tfPlace.getText();
+            int sealevel = Integer.parseInt(tfSealevel.getText());
+            double temperature = Double.parseDouble(tfTemperature.getText());
+            int humidity = Integer.parseInt(tfHumidity.getText());
+            
+            Wetter w = new Wetter(place, sealevel, temperature, humidity);
+            
+            ok = true;
+            dispose();
+        }
+        catch(Exception ex)
+        {
+            JOptionPane.showMessageDialog(null, "Error");
+        }
     }//GEN-LAST:event_onOk
 
     private void onCancel(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onCancel
-        // TODO add your handling code here:
+        try
+        {
+            ok = false;
+            dispose();
+        }
+        catch(Exception ex)
+        {
+          JOptionPane.showMessageDialog(null, "Error");  
+        }
     }//GEN-LAST:event_onCancel
 
+    public boolean isOk() {
+        return ok;
+    }
+
+    public Wetter getWetter() {
+        return wetter;
+    }
+
+    
     /**
      * @param args the command line arguments
      */

@@ -5,17 +5,24 @@
  */
 package gui;
 
+import bl.WetterTableModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Sabrina
  */
 public class WetterGUI extends javax.swing.JFrame {
 
+    private WetterTableModel wtm = new WetterTableModel();
     /**
      * Creates new form WetterGUI
      */
     public WetterGUI() {
         initComponents();
+        this.setLocationRelativeTo(this);
+        tbWetter.setModel(wtm);
+        
     }
 
     /**
@@ -102,11 +109,17 @@ public class WetterGUI extends javax.swing.JFrame {
     private void onAddWeatherStations(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onAddWeatherStations
         try
         {
+            WetterDlg wdlg = new WetterDlg(this, true);
+            wdlg.setVisible(true);
             
+            if(wdlg.isOk())
+            {
+                wtm.add(wdlg.getWetter());
+            }
         }
         catch(Exception ex)
         {
-            
+            JOptionPane.showMessageDialog(this, ex.getMessage());
         }
     }//GEN-LAST:event_onAddWeatherStations
 
@@ -117,7 +130,7 @@ public class WetterGUI extends javax.swing.JFrame {
         }
         catch(Exception ex)
         {
-            
+            JOptionPane.showMessageDialog(this, ex.getMessage());
         }
     }//GEN-LAST:event_onRemoveWeatherStation
 
@@ -128,7 +141,7 @@ public class WetterGUI extends javax.swing.JFrame {
         }
         catch(Exception ex)
         {
-            
+            JOptionPane.showMessageDialog(this, ex.getMessage());
         }
     }//GEN-LAST:event_onSetTemperature
 
